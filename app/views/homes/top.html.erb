@@ -1,1 +1,18 @@
-<h1>top</h1>
+<div class="container">
+  <div class="row">
+  <div class="col-11 mx-auto">
+    <h1>welcome to <strong><i class="fa fa-book"></i>Bookers</strong>!!</h1>
+    <p>In<strong><i class="fa fa-book"></i>Bookers</strong>,<br>
+      <br>
+      you can share and exchange your opinopns,inpressions,and emotions<br>
+      <br>
+      about various books!</p>
+  </div>
+  </div>
+  <div class="row nogutters">
+    <div class="col-10 mx-auto rounded">
+      <%= link_to "Log in", new_user_session_path, class:"btn btn-log btn-block btn-info btn-sm mb-3" %>
+      <%= link_to "Sign up", new_user_registration_path, class:"btn btn-log btn-block btn-success btn-sm mb-6" %>
+    </div>
+  </div>
+</div>
