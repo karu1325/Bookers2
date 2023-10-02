@@ -1,40 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <div class="sideber">
-        <h3>User info</h3>
-        <table class="user-info">
-          <tr>
-            <th><%= image_tag @user.get_profile_image(100,100) %></th>
-            <td></td>
-          </tr>
-          <tr>
-            <th><strong>name<strong></th>
-            <td><strong><%= @user.name %></strong></td>
-          </tr>
-          <tr>
-            <th><strong>introduction</strong></th>
-            <td><strong><%= @user.introduction %></strong></td>
-          </tr>
-        </table>
-        <%= link_to edit_user_path(@user), class:'btn btn-sm btn-light btn-outline-secondary btn-block mt-3' do %>
-          <i class="fa fa-user-gear"></i>
-        <% end %>
+      <div class="sidemenu">
+      <%= render'info', user: @user %>
 
-        <h3>New book</h3>
-        <%= form_with model: @book do |f| %>
-          <div class="new-book-item">Title</div>
-          <%= f.text_field :title, class:'book-title form-control' %>
-          <div class="nem-book-item">Opinion</div>
-          <%= f.text_area :body, class:"book-body form-control" %>
-          <%= f.submit"Create Book", class:"btn btn-lg py-2 btn-success rounded mx-1" %>
-        <% end %>
+      <%= render'form', book: @book_new %>
       </div>
     </div>
 
     <div class="col-8">
       <h3>Books</h3>
-      <table class="Books table-hover">
+      <table class="table-hover">
         <thead>
           <tr>
             <th scope="col">  </th>

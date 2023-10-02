@@ -1,0 +1,18 @@
+        <h3>User info</h3>
+        <table class="user-info">
+          <tr>
+            <th><%= image_tag user.get_profile_image(100,100) %></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th><strong>name<strong></th>
+            <td><strong><%= user.name %></strong></td>
+          </tr>
+          <tr>
+            <th><strong>introduction</strong></th>
+            <td><strong><%= user.introduction %></strong></td>
+          </tr>
+        </table>
+        <%= link_to edit_user_path(user), class:'btn btn-sm btn-light btn-outline-secondary btn-block mt-3' do %>
+          <i class="fa fa-user-gear"></i>
+        <% end %>
