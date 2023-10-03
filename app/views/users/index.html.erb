@@ -1,1 +1,33 @@
-<h1>index</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="sidemenu">
+      <%= render'books/info', user: @user %>
+
+      <%= render'books/form', book_new: @book_new %>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <h3>Users</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scop="col-3"><strong>image</strong></th>
+              <th scop="col-5"><strong>name</strong></th>
+              <th scop="col-2"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td class="px-3"><%= image_tag user.get_profile_image(100,100) %></td>
+              <td class="px-5"><%= user.name %></td>
+              <td class="px-2"><%= link_to'show', user_path(user.id) %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
