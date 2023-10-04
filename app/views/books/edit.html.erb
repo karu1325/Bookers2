@@ -1,1 +1,20 @@
-<h1>book edit</h1>
+<div class="container">
+  <div class="row">
+    <div class="book-edit coi-11">
+      <h3>Editing book</h3>
+      <%= form_with model: @book do |f| %>
+        <div class="book-edit-item">
+          <label for="inputTitle">Title</label><br>
+          <%= f.text_field :title, id:"inputTitle" %>
+        </div>
+        <div class="book-edit-item">
+          <label for="inputBody">Opinion</label><br>
+          <%= f.text_area :body, id:"inputBody" %>
+        </div>
+        <%= f.submit'Update Book', class:"btn btn-lg btn-success rounded" %>
+      <% end %>
+      <%= link_to'Show', book_path(@book.id) %>|
+      <%= link_to'Back', books_path %>
+    </div>
+  </div>
+</div>
