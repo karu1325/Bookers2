@@ -1,4 +1,4 @@
-<% @user.errors.any %>
+<% @user.errors.any? %>
   <%= @user.errors.count %>
   <ul>
     <%= @user.errors.full_messages.each do |message| %>

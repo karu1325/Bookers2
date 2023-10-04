@@ -1,4 +1,4 @@
-<% if @book_new.errors.any %>
+<% if @book_new.errors.any? %>
   <%= @book_new.erroes.count %>
   <ul>
     <% @book_new.errors.full_messages.each do |message| %>
