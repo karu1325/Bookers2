@@ -1,8 +1,12 @@
         <h3>New book</h3>
         <%= form_with model: book_new do |f| %>
-          <div class="new-book-item">Title</div>
-          <%= f.text_field :title, class:'book-title form-control' %>
-          <div class="nem-book-item">Opinion</div>
-          <%= f.text_area :body, class:"book-body form-control" %>
-          <%= f.submit"Create Book", class:"btn btn-lg py-2 btn-success rounded mx-1" %>
+          <div class="newbook">
+            <label for="inputTitle">Title</label><br>
+            <%= f.text_field :title, id:"inputTitle" %>
+          </div>
+          <div class="newbook">
+            <label for="inputBody">Opinion</label><br>
+            <%= f.text_area :body, id:"inputBody" %>
+          </div>
+            <%= f.submit"Create Book", class:"btn btn-lg py-2 btn-success rounded mx-1" %>
         <% end %>
