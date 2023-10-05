@@ -1,15 +1,15 @@
-<% @user.errors.any? %>
-  <%= @user.errors.count %>
-  <ul>
-    <%= @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
 <div class="container">
   <div class="row">
-    <div class="col-10">
+    <div class="edit-box col-7 my-3 mx-auto">
       <h2>User info</h2>
+      <% if @user.errors.any? %>
+      <h3 class="error-count"><%= @user.errors.count %> error prohibited this obj from being saved:</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+      <% end %>
       <%= form_with model: @user do |f| %>
       <div class="form-item">
         <label for="inputName">Name</label><br>
